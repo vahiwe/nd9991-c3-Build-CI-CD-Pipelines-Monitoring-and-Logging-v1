@@ -1,7 +1,5 @@
 - name: Create the ELB only listening over port 80
-  hosts: localhost
   connection: local
-  gather_facts: no
   ec2_elb_lb:
     name: "{{ ELBNAME }}"
     state: present

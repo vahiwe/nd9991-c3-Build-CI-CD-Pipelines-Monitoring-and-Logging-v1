@@ -8,8 +8,10 @@
     application: nginxblue
   tasks:
     - name: create instances
-      include_role: 
+      delegate_to: localhost
+      include_role:
         name: create_instance
     - name: setup DNS
+      delegate_to: localhost
       include_role:
         name: route53

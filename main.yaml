@@ -2,16 +2,14 @@
 - name: Deploy
   hosts: [localhost]
   gather_facts: false
-  connection: local
+  delegate_to: localhost
   vars:
     ansible_python_interpreter: /usr/bin/python2
     application: nginxblue
   tasks:
     - name: create instances
-      delegate_to: localhost
-      include_role:
+      include_role: 
         name: create_instance
     - name: setup DNS
-      delegate_to: localhost
       include_role:
         name: route53

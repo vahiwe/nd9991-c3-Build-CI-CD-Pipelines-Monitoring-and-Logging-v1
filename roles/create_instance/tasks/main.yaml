@@ -1,5 +1,7 @@
 - name: Create the ELB only listening over port 80
   connection: local
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
   ec2_elb_lb:
     name: "{{ ELBNAME }}"
     state: present

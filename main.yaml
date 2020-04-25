@@ -2,7 +2,6 @@
 - name: Deploy
   hosts: [localhost]
   gather_facts: false
-  delegate_to: localhost
   vars:
     ansible_python_interpreter: /usr/bin/python2
     application: nginxblue
